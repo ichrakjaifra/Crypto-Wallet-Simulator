@@ -9,10 +9,10 @@ public class Main {
             DatabaseConnection dbConn = DatabaseConnection.getInstance();
             if (dbConn.testConnection()) {
                 LoggerUtil.logInfo("Connexion réussie à la base de données !");
-                System.out.println("Connexion réussie !");
+                System.out.println("Connexion réussie!");
             } else {
                 LoggerUtil.logError("Connexion échouée à la base de données !");
-                System.out.println("Connexion échouée !");
+                System.out.println("Connexion échouée!");
             }
         } catch (Exception e) {
             LoggerUtil.logError("Erreur lors du test de connexion : " + e.getMessage(), e);
