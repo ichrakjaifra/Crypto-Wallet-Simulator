@@ -1,0 +1,6 @@
+[2025-09-23 12:13:57] INFO: CryptoWalletSimulator - === Test de connexion à PostgreSQL ===
+[2025-09-23 12:21:35] INFO: CryptoWalletSimulator - === Test de connexion à PostgreSQL ===
+[2025-09-23 14:04:28] SEVERE: CryptoWalletSimulator - Erreur de connexion à la base de données: FATAL: authentification par mot de passe �chou�e pour l'utilisateur  � postgres �
+[2025-09-23 14:21:39] INFO: CryptoWalletSimulator - === Test de connexion à PostgreSQL ===
+[2025-09-23 14:21:40] INFO: CryptoWalletSimulator - Connexion à la base de données établie avec succès
+[2025-09-23 14:21:40] INFO: CryptoWalletSimulator - Connexion réussie à la base de données !
