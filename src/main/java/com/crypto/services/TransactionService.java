@@ -22,6 +22,7 @@ public class TransactionService {
     private TransactionRepository transactionRepository;
     private MempoolService mempoolService;
 
+
     private TransactionService() {
         this.transactionRepository = TransactionRepository.getInstance();
         this.mempoolService = MempoolService.getInstance();
@@ -36,29 +37,19 @@ public class TransactionService {
 
     public Transaction createTransaction(Wallet wallet, String destinationAddress,
                                          double amount, FeeLevel feeLevel) {
-        // Validation de l'adresse destination
         if (!validateAddress(wallet.getCryptoType(), destinationAddress)) {
             throw new InvalidAddressException("Adresse destination invalide pour " + wallet.getCryptoType());
         }
 
-        // Validation du montant
         if (amount <= 0) {
             throw new InvalidAmountException("Le montant doit être positif");
         }
 
-        // Vérification du solde suffisant
         double fees = FeeCalculator.calculateFee(wallet.getCryptoType(), feeLevel, amount);
         double totalAmount = amount + fees;
 
-        if (wallet.getBalance() < totalAmount) {
-            throw new InsufficientBalanceException(
-                    String.format("Solde insuffisant. Solde actuel: %.6f, Montant requis: %.6f",
-                            wallet.getBalance(), totalAmount)
-            );
-        }
-
-        // Création de la transaction
         Transaction transaction = new Transaction();
+        transaction.setId(UUID.randomUUID());
         transaction.setSourceAddress(wallet.getAddress());
         transaction.setDestinationAddress(destinationAddress);
         transaction.setAmount(amount);
@@ -67,23 +58,24 @@ public class TransactionService {
         transaction.setStatus(TransactionStatus.PENDING);
         transaction.setCryptoType(wallet.getCryptoType());
         transaction.setWalletId(wallet.getId());
+        transaction.setCreationDate(LocalDateTime.now());
 
-        // Sauvegarder la transaction
         Transaction savedTransaction = transactionRepository.save(transaction);
 
         if (savedTransaction != null) {
-            // Ajouter au mempool
             mempoolService.addTransactionToMempool(savedTransaction);
 
-            // Mettre à jour le solde du wallet
-            wallet.setBalance(wallet.getBalance() - totalAmount);
+            // Débit réel du solde
+            double newBalance = wallet.getBalance() - totalAmount;
+            wallet.setBalance(newBalance);
 
-            // Ajouter la transaction au wallet
-            wallet.addTransaction(savedTransaction);
+            // Mettre à jour le wallet dans la base
+            WalletService walletService = WalletService.getInstance();
+            walletService.updateWalletBalance(wallet.getId(), newBalance);
 
             LoggerUtil.logInfo(String.format(
-                    "Transaction créée: %s - Montant: %.6f - Frais: %.6f - Total: %.6f",
-                    savedTransaction.getId(), amount, fees, totalAmount
+                    "Transaction créée: %s - Wallet: %s - Montant: %.6f - Frais: %.6f - Nouveau solde: %.6f",
+                    savedTransaction.getId(), wallet.getId(), amount, fees, newBalance
             ));
         }
 
@@ -92,7 +84,6 @@ public class TransactionService {
 
     public Transaction createSimulatedTransaction(Wallet wallet, String destinationAddress,
                                                   double amount, FeeLevel feeLevel) {
-        // Pour la simulation, on ne vérifie pas le solde
         if (!validateAddress(wallet.getCryptoType(), destinationAddress)) {
             throw new InvalidAddressException("Adresse destination invalide");
         }
@@ -102,16 +93,37 @@ public class TransactionService {
         }
 
         Transaction transaction = new Transaction();
+        transaction.setId(UUID.randomUUID());
         transaction.setSourceAddress(wallet.getAddress());
         transaction.setDestinationAddress(destinationAddress);
         transaction.setAmount(amount);
-        transaction.setFees(FeeCalculator.calculateFee(wallet.getCryptoType(), feeLevel, amount));
+        transaction.setFees(calculateDeterministicFee(wallet.getCryptoType(), feeLevel, amount));
         transaction.setFeeLevel(feeLevel);
         transaction.setStatus(TransactionStatus.PENDING);
         transaction.setCryptoType(wallet.getCryptoType());
         transaction.setWalletId(wallet.getId());
 
         return transaction;
+    }
+
+    private double calculateDeterministicFee(CryptoType cryptoType, FeeLevel feeLevel, double amount) {
+        double baseFee;
+        switch (cryptoType) {
+            case BITCOIN:
+                baseFee = 0.0001;
+                break;
+            case ETHEREUM:
+                baseFee = 0.001;
+                break;
+            default:
+                baseFee = 0.001;
+        }
+
+        double multiplier = feeLevel.getMultiplier();
+        double amountFactor = 1 + (amount / 10000);
+
+        double fee = baseFee * multiplier * amountFactor;
+        return Math.round(fee * 1000000.0) / 1000000.0;
     }
 
     public boolean validateAddress(CryptoType cryptoType, String address) {
@@ -155,9 +167,8 @@ public class TransactionService {
     }
 
     public boolean processTransaction(Transaction transaction) {
-        // Simulation du traitement de la transaction
         try {
-            Thread.sleep(100); // Simulation du temps de traitement
+            Thread.sleep(100);
             return updateTransactionStatus(transaction.getId(), TransactionStatus.CONFIRMED);
         } catch (InterruptedException e) {
             Thread.currentThread().interrupt();

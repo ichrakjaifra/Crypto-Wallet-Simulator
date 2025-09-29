@@ -22,3 +22,84 @@
 [2025-09-25 14:37:40] INFO: CryptoWalletSimulator - === Test de connexion à PostgreSQL ===
 [2025-09-25 14:37:41] INFO: CryptoWalletSimulator - Connexion à la base de données établie avec succès
 [2025-09-25 14:37:41] INFO: CryptoWalletSimulator - Connexion réussie à la base de données !
+[2025-09-26 16:27:25] INFO: CryptoWalletSimulator - Connexion à la base de données établie avec succès
+[2025-09-26 16:27:25] INFO: CryptoWalletSimulator - Tables de la base de données initialisées avec succès
+[2025-09-26 16:27:25] INFO: CryptoWalletSimulator - Base de données initialisée avec succès
+[2025-09-26 16:29:23] INFO: CryptoWalletSimulator - Wallet inséré avec succès: 450b2a67-9808-4f95-ba33-185a38c2e6b1
+[2025-09-26 16:29:23] INFO: CryptoWalletSimulator - Nouveau wallet créé: 450b2a67-9808-4f95-ba33-185a38c2e6b1 - BITCOIN
+[2025-09-26 16:43:11] INFO: CryptoWalletSimulator - 15 transactions aléatoires générées dans le mempool
+[2025-09-26 16:48:00] INFO: CryptoWalletSimulator - Wallet inséré avec succès: 9fddaac4-6fa2-40cc-a072-9314525d8870
+[2025-09-26 16:48:00] INFO: CryptoWalletSimulator - Nouveau wallet créé: 9fddaac4-6fa2-40cc-a072-9314525d8870 - BITCOIN
+[2025-09-26 16:54:03] INFO: CryptoWalletSimulator - 15 transactions aléatoires générées dans le mempool
+[2025-09-26 17:09:20] INFO: CryptoWalletSimulator - Application fermée
+[2025-09-27 22:57:41] INFO: CryptoWalletSimulator - Connexion à la base de données établie avec succès
+[2025-09-27 22:57:41] INFO: CryptoWalletSimulator - Tables de la base de données initialisées avec succès
+[2025-09-27 22:57:41] INFO: CryptoWalletSimulator - Base de données initialisée avec succès
+[2025-09-27 23:00:25] INFO: CryptoWalletSimulator - Wallet inséré avec succès: 6cdc701e-d929-4d88-88ee-55917432613b
+[2025-09-27 23:00:25] INFO: CryptoWalletSimulator - Nouveau wallet créé: 6cdc701e-d929-4d88-88ee-55917432613b - BITCOIN
+[2025-09-27 23:00:25] INFO: CryptoWalletSimulator - Wallet mis à jour avec succès: 6cdc701e-d929-4d88-88ee-55917432613b
+[2025-09-27 23:00:25] INFO: CryptoWalletSimulator - Solde de test initialisé: 10.0 BTC
+[2025-09-27 23:30:56] INFO: CryptoWalletSimulator - 15 transactions aléatoires générées dans le mempool
+[2025-09-27 23:32:46] INFO: CryptoWalletSimulator - Wallet mis à jour avec succès: 6cdc701e-d929-4d88-88ee-55917432613b
+[2025-09-27 23:32:46] INFO: CryptoWalletSimulator - Dépôt effectué: Wallet 6cdc701e-d929-4d88-88ee-55917432613b - Montant: 2,000000 BTC - Nouveau solde: 12,000000 BTC
+[2025-09-27 23:33:59] INFO: CryptoWalletSimulator - 15 transactions aléatoires générées dans le mempool
+[2025-09-27 23:34:30] INFO: CryptoWalletSimulator - 20 transactions aléatoires générées dans le mempool
+[2025-09-27 23:34:30] INFO: CryptoWalletSimulator - Mempool vidé
+[2025-09-27 23:35:34] INFO: CryptoWalletSimulator - Transaction insérée avec succès: d3fdb368-571b-479e-9605-e9bc8e1456d2
+[2025-09-27 23:35:34] INFO: CryptoWalletSimulator - Transaction ajoutée au mempool: d3fdb368-571b-479e-9605-e9bc8e1456d2
+[2025-09-27 23:35:34] INFO: CryptoWalletSimulator - Transaction créée: d3fdb368-571b-479e-9605-e9bc8e1456d2 - Montant: 0,100000 - Frais: 0,000216 - Total: 0,100216
+[2025-09-27 23:36:25] INFO: CryptoWalletSimulator - 15 transactions aléatoires générées dans le mempool
+[2025-09-27 23:39:33] INFO: CryptoWalletSimulator - Application fermée
+[2025-09-28 00:51:06] INFO: CryptoWalletSimulator - Connexion à la base de données établie avec succès
+[2025-09-28 00:51:06] INFO: CryptoWalletSimulator - Tables de la base de données initialisées avec succès
+[2025-09-28 00:51:06] INFO: CryptoWalletSimulator - Base de données initialisée avec succès
+[2025-09-28 00:51:45] INFO: CryptoWalletSimulator - Wallet inséré avec succès: 7d13a340-1f28-4aac-b520-d5b4be894697
+[2025-09-28 00:51:45] INFO: CryptoWalletSimulator - Nouveau wallet créé: 7d13a340-1f28-4aac-b520-d5b4be894697 - BITCOIN
+[2025-09-28 00:53:21] INFO: CryptoWalletSimulator - Wallet mis à jour avec succès: 7d13a340-1f28-4aac-b520-d5b4be894697
+[2025-09-28 00:53:21] INFO: CryptoWalletSimulator - Wallet crédité: 7d13a340-1f28-4aac-b520-d5b4be894697 - Montant: 10,000000 BTC - Nouveau solde: 10,000000 BTC
+[2025-09-28 00:54:29] INFO: CryptoWalletSimulator - 20 transactions aléatoires générées dans le mempool
+[2025-09-28 00:54:29] INFO: CryptoWalletSimulator - Mempool vidé
+[2025-09-28 00:55:04] INFO: CryptoWalletSimulator - 15 transactions aléatoires générées dans le mempool
+[2025-09-28 00:56:16] INFO: CryptoWalletSimulator - Transaction insérée avec succès: d8b43b06-ee93-43c1-85de-a633caf12b74
+[2025-09-28 00:56:16] INFO: CryptoWalletSimulator - Transaction ajoutée au mempool: d8b43b06-ee93-43c1-85de-a633caf12b74
+[2025-09-28 00:56:16] INFO: CryptoWalletSimulator - Transaction créée: d8b43b06-ee93-43c1-85de-a633caf12b74 - Montant: 0,100000 - Frais: 0,000179 - Total: 0,100179
+[2025-09-28 00:57:31] INFO: CryptoWalletSimulator - 15 transactions aléatoires générées dans le mempool
+[2025-09-28 01:00:27] INFO: CryptoWalletSimulator - Wallet inséré avec succès: ab88d188-018a-45d2-85a8-2266a1220ca7
+[2025-09-28 01:00:27] INFO: CryptoWalletSimulator - Nouveau wallet créé: ab88d188-018a-45d2-85a8-2266a1220ca7 - ETHEREUM
+[2025-09-28 01:01:10] INFO: CryptoWalletSimulator - Wallet mis à jour avec succès: ab88d188-018a-45d2-85a8-2266a1220ca7
+[2025-09-28 01:01:10] INFO: CryptoWalletSimulator - Wallet crédité: ab88d188-018a-45d2-85a8-2266a1220ca7 - Montant: 10,000000 ETH - Nouveau solde: 10,000000 ETH
+[2025-09-28 01:01:44] INFO: CryptoWalletSimulator - Transaction insérée avec succès: d069664b-fd10-48fe-9eab-e247e25f9acf
+[2025-09-28 01:01:44] INFO: CryptoWalletSimulator - Transaction ajoutée au mempool: d069664b-fd10-48fe-9eab-e247e25f9acf
+[2025-09-28 01:01:44] INFO: CryptoWalletSimulator - Transaction créée: d069664b-fd10-48fe-9eab-e247e25f9acf - Montant: 1,500000 - Frais: 0,004552 - Total: 1,504552
+[2025-09-28 01:02:47] INFO: CryptoWalletSimulator - Application fermée
+[2025-09-29 10:16:49] INFO: CryptoWalletSimulator - Connexion à la base de données établie avec succès
+[2025-09-29 10:17:15] INFO: CryptoWalletSimulator - Connexion à la base de données établie avec succès
+[2025-09-29 10:24:14] INFO: CryptoWalletSimulator - Connexion à la base de données établie avec succès
+[2025-09-29 10:41:04] INFO: CryptoWalletSimulator - Connexion à la base de données établie avec succès
+[2025-09-29 10:41:04] INFO: CryptoWalletSimulator - Tables de la base de données initialisées avec succès
+[2025-09-29 10:41:04] INFO: CryptoWalletSimulator - Base de données initialisée avec succès
+[2025-09-29 10:41:38] INFO: CryptoWalletSimulator - Application fermée
+[2025-09-29 10:43:13] INFO: CryptoWalletSimulator - Connexion à la base de données établie avec succès
+[2025-09-29 10:43:13] INFO: CryptoWalletSimulator - Tables de la base de données initialisées avec succès
+[2025-09-29 10:43:13] INFO: CryptoWalletSimulator - Base de données initialisée avec succès
+[2025-09-29 10:44:59] INFO: CryptoWalletSimulator - Application fermée
+[2025-09-29 10:45:07] INFO: CryptoWalletSimulator - Connexion à la base de données établie avec succès
+[2025-09-29 10:45:07] INFO: CryptoWalletSimulator - Tables de la base de données initialisées avec succès
+[2025-09-29 10:45:07] INFO: CryptoWalletSimulator - Base de données initialisée avec succès
+[2025-09-29 10:45:20] INFO: CryptoWalletSimulator - Wallet inséré avec succès: 6ea339ce-1af1-43e5-9f8f-ed9d2641b90d
+[2025-09-29 10:45:20] INFO: CryptoWalletSimulator - Nouveau wallet créé: 6ea339ce-1af1-43e5-9f8f-ed9d2641b90d - BITCOIN
+[2025-09-29 10:48:26] INFO: CryptoWalletSimulator - Wallet mis à jour avec succès: 6ea339ce-1af1-43e5-9f8f-ed9d2641b90d
+[2025-09-29 10:48:26] INFO: CryptoWalletSimulator - Wallet crédité: 6ea339ce-1af1-43e5-9f8f-ed9d2641b90d - Montant: 10,000000 BTC - Nouveau solde: 10,000000 BTC
+[2025-09-29 10:54:00] INFO: CryptoWalletSimulator - Transaction insérée avec succès: ccd6ea64-c76f-4cf8-86fc-0c894af13ab1
+[2025-09-29 10:54:00] INFO: CryptoWalletSimulator - Transaction ajoutée au mempool: ccd6ea64-c76f-4cf8-86fc-0c894af13ab1
+[2025-09-29 10:54:00] INFO: CryptoWalletSimulator - Wallet mis à jour avec succès: 6ea339ce-1af1-43e5-9f8f-ed9d2641b90d
+[2025-09-29 10:54:00] INFO: CryptoWalletSimulator - Solde du wallet mis à jour: 6ea339ce-1af1-43e5-9f8f-ed9d2641b90d - Nouveau solde: 9.499805
+[2025-09-29 10:54:00] INFO: CryptoWalletSimulator - Transaction créée: ccd6ea64-c76f-4cf8-86fc-0c894af13ab1 - Wallet: 6ea339ce-1af1-43e5-9f8f-ed9d2641b90d - Montant: 0,500000 - Frais: 0,000195 - Nouveau solde: 9,499805
+[2025-09-29 11:01:44] INFO: CryptoWalletSimulator - 20 transactions aléatoires générées dans le mempool
+[2025-09-29 11:01:44] INFO: CryptoWalletSimulator - Mempool vidé
+[2025-09-29 11:02:10] INFO: CryptoWalletSimulator - 15 transactions aléatoires générées dans le mempool
+[2025-09-29 11:04:14] INFO: CryptoWalletSimulator - Application fermée
+[2025-09-29 11:12:27] INFO: CryptoWalletSimulator - Connexion à la base de données établie avec succès
+[2025-09-29 11:12:27] INFO: CryptoWalletSimulator - Tables de la base de données initialisées avec succès
+[2025-09-29 11:12:27] INFO: CryptoWalletSimulator - Base de données initialisée avec succès
+[2025-09-29 11:13:10] INFO: CryptoWalletSimulator - Application fermée

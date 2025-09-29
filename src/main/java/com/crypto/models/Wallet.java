@@ -39,7 +39,19 @@ public abstract class Wallet {
     public void setTransactions(List<Transaction> transactions) { this.transactions = transactions; }
 
     public void addTransaction(Transaction transaction) {
-        this.transactions.add(transaction);
+        // Vérifier si la transaction n'existe pas déjà
+        boolean exists = this.transactions.stream()
+                .anyMatch(t -> t.getId().equals(transaction.getId()));
+
+        if (!exists) {
+            this.transactions.add(transaction);
+        }
+    }
+
+    // Charger les transactions depuis la base de données
+    public void loadTransactions(List<Transaction> transactions) {
+        this.transactions.clear();
+        this.transactions.addAll(transactions);
     }
 
     @Override

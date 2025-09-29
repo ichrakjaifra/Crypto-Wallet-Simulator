@@ -6,6 +6,7 @@ import main.java.com.crypto.models.BitcoinWallet;
 import main.java.com.crypto.models.EthereumWallet;
 import main.java.com.crypto.enums.CryptoType;
 import main.java.com.crypto.utils.LoggerUtil;
+import main.java.com.crypto.models.Transaction;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
@@ -14,6 +15,7 @@ public class WalletService {
     private static WalletService instance;
     private WalletRepository walletRepository;
 
+    // ⚠️ CONSTRUCTEUR SIMPLE SANS DÉPENDANCE
     private WalletService() {
         this.walletRepository = WalletRepository.getInstance();
     }
@@ -39,12 +41,39 @@ public class WalletService {
                 throw new IllegalArgumentException("Type de crypto non supporté: " + cryptoType);
         }
 
+        wallet.setBalance(0.0);
+
         Wallet savedWallet = walletRepository.save(wallet);
         if (savedWallet != null) {
             LoggerUtil.logInfo("Nouveau wallet créé: " + savedWallet.getId() + " - " + cryptoType);
         }
 
         return savedWallet;
+    }
+
+    public boolean creditWallet(UUID walletId, double amount) {
+        if (amount <= 0) {
+            LoggerUtil.logWarning("Tentative de crédit d'un montant négatif ou nul: " + amount);
+            return false;
+        }
+
+        Optional<Wallet> walletOpt = walletRepository.findById(walletId);
+        if (walletOpt.isPresent()) {
+            Wallet wallet = walletOpt.get();
+            double newBalance = wallet.getBalance() + amount;
+            wallet.setBalance(newBalance);
+
+            Wallet updatedWallet = walletRepository.save(wallet);
+            if (updatedWallet != null) {
+                LoggerUtil.logInfo(String.format(
+                        "Wallet crédité: %s - Montant: %.6f %s - Nouveau solde: %.6f %s",
+                        walletId, amount, wallet.getCryptoType().getSymbol(),
+                        newBalance, wallet.getCryptoType().getSymbol()
+                ));
+                return true;
+            }
+        }
+        return false;
     }
 
     public Optional<Wallet> getWalletById(UUID id) {

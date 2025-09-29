@@ -41,18 +41,77 @@ public class MempoolService {
     public int calculatePosition(Transaction transaction) {
         List<Transaction> sortedTransactions = mempool.getSortedTransactions();
 
-        for (int i = 0; i < sortedTransactions.size(); i++) {
-            if (sortedTransactions.get(i).getId().equals(transaction.getId())) {
+        if (sortedTransactions.isEmpty()) {
+            return 1;
+        }
+
+        int position = 1;
+        for (Transaction tx : sortedTransactions) {
+            if (tx.getFees() > transaction.getFees()) {
+                position++;
+            } else {
+                break;
+            }
+        }
+
+        return position;
+    }
+
+    public int calculateSimulatedPosition(Transaction simulatedTransaction, FeeLevel feeLevel) {
+        List<Transaction> simulatedMempool = new ArrayList<>(mempool.getTransactions());
+
+        Transaction tempTx = new Transaction();
+        tempTx.setId(UUID.randomUUID());
+        tempTx.setFees(calculateSimulatedFee(simulatedTransaction.getCryptoType(), feeLevel, simulatedTransaction.getAmount()));
+        tempTx.setFeeLevel(feeLevel);
+
+        simulatedMempool.add(tempTx);
+
+        List<Transaction> sorted = simulatedMempool.stream()
+                .sorted(Comparator.comparingDouble(Transaction::getFees).reversed())
+                .collect(Collectors.toList());
+
+        for (int i = 0; i < sorted.size(); i++) {
+            if (sorted.get(i).getId().equals(tempTx.getId())) {
                 return i + 1;
             }
         }
 
-        // Si la transaction n'est pas trouvée, elle serait à la fin
-        return sortedTransactions.size() + 1;
+        return sorted.size();
+    }
+
+    private double calculateSimulatedFee(CryptoType cryptoType, FeeLevel feeLevel, double amount) {
+        double baseFee = getBaseFee(cryptoType);
+        double multiplier = feeLevel.getMultiplier();
+        double amountFactor = 1 + (amount / 10000);
+
+        return baseFee * multiplier * amountFactor;
+    }
+
+    private double getBaseFee(CryptoType cryptoType) {
+        switch (cryptoType) {
+            case BITCOIN: return 0.0001;
+            case ETHEREUM: return 0.001;
+            default: return 0.001;
+        }
+    }
+
+    public long estimateTime(int position, FeeLevel feeLevel) {
+        long baseTime = position * 10L;
+
+        switch (feeLevel) {
+            case RAPIDE:
+                return baseTime / 3;
+            case STANDARD:
+                return baseTime / 2;
+            case ECONOMIQUE:
+            default:
+                return baseTime;
+        }
     }
 
     public long estimateTime(int position) {
-        return position * 10L; // 10 minutes par position
+        return estimateTime(position, FeeLevel.ECONOMIQUE);
     }
 
     public int getMempoolSize() {
@@ -80,13 +139,13 @@ public class MempoolService {
         transaction.setId(UUID.randomUUID());
         transaction.setSourceAddress(generateRandomAddress());
         transaction.setDestinationAddress(generateRandomAddress());
-        transaction.setAmount(1 + (random.nextDouble() * 9)); // Montant aléatoire entre 1 et 10
-        transaction.setFees(0.1 + (random.nextDouble() * 4.9)); // Frais aléatoires entre 0.1 et 5
+        transaction.setAmount(1 + (random.nextDouble() * 9));
+        transaction.setFees(0.1 + (random.nextDouble() * 4.9));
         transaction.setCreationDate(LocalDateTime.now().minusMinutes(random.nextInt(120)));
         transaction.setFeeLevel(FeeLevel.values()[random.nextInt(FeeLevel.values().length)]);
         transaction.setStatus(TransactionStatus.PENDING);
         transaction.setCryptoType(CryptoType.values()[random.nextInt(CryptoType.values().length)]);
-        transaction.setWalletId(UUID.randomUUID()); // ID wallet fictif
+        transaction.setWalletId(UUID.randomUUID());
 
         return transaction;
     }
