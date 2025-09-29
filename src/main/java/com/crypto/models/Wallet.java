@@ -6,11 +6,11 @@ import java.util.List;
 import java.util.UUID;
 
 public abstract class Wallet {
-    protected UUID id;
-    protected String address;
-    protected double balance;
-    protected CryptoType cryptoType;
-    protected List<Transaction> transactions;
+    private UUID id;
+    private String address;
+    private double balance;
+    private CryptoType cryptoType;
+    private List<Transaction> transactions;
 
     public Wallet(CryptoType cryptoType) {
         this.id = UUID.randomUUID();

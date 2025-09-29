@@ -103,3 +103,9 @@
 [2025-09-29 11:12:27] INFO: CryptoWalletSimulator - Tables de la base de données initialisées avec succès
 [2025-09-29 11:12:27] INFO: CryptoWalletSimulator - Base de données initialisée avec succès
 [2025-09-29 11:13:10] INFO: CryptoWalletSimulator - Application fermée
+[2025-09-29 14:39:52] INFO: CryptoWalletSimulator - Connexion à la base de données établie avec succès
+[2025-09-29 14:39:53] INFO: CryptoWalletSimulator - Tables de la base de données initialisées avec succès
+[2025-09-29 14:39:53] INFO: CryptoWalletSimulator - Base de données initialisée avec succès
+[2025-09-29 14:41:57] INFO: CryptoWalletSimulator - Wallet inséré avec succès: bd36f933-94db-459d-a0a9-c31df2340749
+[2025-09-29 14:41:57] INFO: CryptoWalletSimulator - Nouveau wallet créé: bd36f933-94db-459d-a0a9-c31df2340749 - ETHEREUM
+[2025-09-29 14:42:08] INFO: CryptoWalletSimulator - Application fermée
