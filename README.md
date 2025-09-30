@@ -37,5 +37,163 @@
 - **java.util.logging** - Système de logging
 
 ## 📁 Structure du Projet
-![Logo](images/s1.png)
-![Logo](images/s22.png)
+
+```
+\---src
+    |   Main.java
+    |   
+    \---main
+        \---java
+            \---com
+                \---crypto
+                    +---config
+                    |       DatabaseConfig.java
+                    |       
+                    +---enums
+                    |       CryptoType.java
+                    |       FeeLevel.java
+                    |       TransactionStatus.java
+                    |       
+                    +---exceptions
+                    |       InsufficientBalanceException.java
+                    |       InvalidAddressException.java
+                    |       InvalidAmountException.java
+                    |       
+                    +---interfaces
+                    |       ITransaction.java
+                    |       IWallet.java
+                    |       
+                    +---models
+                    |       BitcoinWallet.java
+                    |       EthereumWallet.java
+                    |       Mempool.java
+                    |       Transaction.java
+                    |       Wallet.java
+                    |       
+                    +---repositories
+                    |       DatabaseConnection.java
+                    |       TransactionRepository.java
+                    |       WalletRepository.java
+                    |       
+                    +---services
+                    |       MempoolService.java
+                    |       TransactionService.java
+                    |       WalletService.java
+                    |       
+                    \---utils
+                            AddressValidator.java
+                            FeeCalculator.java
+                            LoggerUtil.java
+   ```                         
+
+## ⚙️ Prérequis et Installation
+
+### 1. Prérequis Système
+- **Java JDK 8**
+- **PostgreSQL 12+**
+- **Windows/Linux/Mac**
+
+### 2. Installation de la Base de Données
+
+```sql
+-- Créer la base de données
+CREATE DATABASE crypto_wallet;
+
+CREATE TABLE wallets (
+    id UUID PRIMARY KEY,
+    address VARCHAR(255) NOT NULL UNIQUE,
+    balance DOUBLE PRECISION NOT NULL DEFAULT 0.0,
+    crypto_type VARCHAR(20) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE transactions (
+    id UUID PRIMARY KEY,
+    source_address VARCHAR(255) NOT NULL,
+    destination_address VARCHAR(255) NOT NULL,
+    amount DOUBLE PRECISION NOT NULL,
+    fees DOUBLE PRECISION NOT NULL,
+    creation_date TIMESTAMP NOT NULL,
+    fee_level VARCHAR(20) NOT NULL,
+    status VARCHAR(20) NOT NULL,
+    crypto_type VARCHAR(20) NOT NULL,
+    wallet_id UUID REFERENCES wallets(id) ON DELETE CASCADE,
+    confirmed_at TIMESTAMP NULL
+);
+
+```
+
+### 3. Configuration
+Modifiez DatabaseConfig.java selon votre configuration PostgreSQL :
+
+```
+public class DatabaseConfig {
+    public static final String URL = "jdbc:postgresql://localhost:5432/crypto_wallet";
+    public static final String USERNAME = "postgres";
+    public static final String PASSWORD = "votre_mot_de_passe";
+}
+```
+
+### 🎮 Guide d'Utilisation
+### Démarrage de l'application et Création d'un wallet :
+![logo](images/1.png)
+### Créditer le wallet :
+![logo](images/2.png)
+### Consultation des informations du wallet :
+![logo](images/3.png)
+### Comparaison des frais :
+![logo](images/4.png)
+### Consultation du mempool :
+![logo](images/5.png)
+### Création d'une transaction :
+![logo](images/6.png)
+![logo](images/7.png)
+### Vérification de la position dans le mempool :
+![logo](images/8.png)
+### Nouvelle consultation du mempool (avec votre transaction) :
+![logo](images/9.png)
+### Informations du wallet après transaction :
+![logo](images/10.png)
+### Séléctionné un wallet
+![logo](images/11.png)
+
+
+### 📝 Journalisation (Logging)
+Les logs sont sauvegardés dans logs/crypto-wallet.log :
+
+```
+[2025-09-23 12:13:57] INFO: CryptoWalletSimulator - === Test de connexion à PostgreSQL ===
+[2025-09-23 12:21:35] INFO: CryptoWalletSimulator - === Test de connexion à PostgreSQL ===
+[2025-09-23 14:04:28] SEVERE: CryptoWalletSimulator - Erreur de connexion à la base de données: FATAL: authentification par mot de passe �chou�e pour l'utilisateur  � postgres �
+[2025-09-23 14:21:39] INFO: CryptoWalletSimulator - === Test de connexion à PostgreSQL ===
+[2025-09-23 14:21:40] INFO: CryptoWalletSimulator - Connexion à la base de données établie avec succès
+```
+
+### 🚀 Fonctionnalités Avancées
+### Validation des Adresses
+Bitcoin: Format 1, 3, ou bc1 avec 25-39 caractères
+
+Ethereum: Format 0x avec 40 caractères hexadécimaux
+
+### Gestion d'Erreurs
+Solde insuffisant
+
+Adresse invalide
+
+Montant négatif
+
+Connexion base de données
+
+### Génération Aléatoire
+Transactions simulées pour le mempool
+
+Adresses cryptographiques réalistes
+
+Variation des frais selon la congestion
+
+### 👥 Auteur
+Votre Nom
+🐙 GitHub: @https://github.com/ichrakjaifra
+
+
+
