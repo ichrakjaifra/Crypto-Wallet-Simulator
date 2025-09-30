@@ -37,10 +37,54 @@
 - **java.util.logging** - Système de logging
 
 ## 📁 Structure du Projet
-![Logo](images/s1.png)
-![Logo](images/s22.png)
 
-
+```
+\---src
+    |   Main.java
+    |   
+    \---main
+        \---java
+            \---com
+                \---crypto
+                    +---config
+                    |       DatabaseConfig.java
+                    |       
+                    +---enums
+                    |       CryptoType.java
+                    |       FeeLevel.java
+                    |       TransactionStatus.java
+                    |       
+                    +---exceptions
+                    |       InsufficientBalanceException.java
+                    |       InvalidAddressException.java
+                    |       InvalidAmountException.java
+                    |       
+                    +---interfaces
+                    |       ITransaction.java
+                    |       IWallet.java
+                    |       
+                    +---models
+                    |       BitcoinWallet.java
+                    |       EthereumWallet.java
+                    |       Mempool.java
+                    |       Transaction.java
+                    |       Wallet.java
+                    |       
+                    +---repositories
+                    |       DatabaseConnection.java
+                    |       TransactionRepository.java
+                    |       WalletRepository.java
+                    |       
+                    +---services
+                    |       MempoolService.java
+                    |       TransactionService.java
+                    |       WalletService.java
+                    |       
+                    \---utils
+                            AddressValidator.java
+                            FeeCalculator.java
+                            LoggerUtil.java
+   ```                         
 
 ## ⚙️ Prérequis et Installation
 
@@ -68,5 +112,7 @@ public class DatabaseConfig {
     public static final String PASSWORD = "votre_mot_de_passe";
 }
 ```
+
+### 🎮 Guide d'Utilisation
 
 
