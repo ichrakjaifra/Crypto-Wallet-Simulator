@@ -135,17 +135,26 @@ public class DatabaseConfig {
 ```
 
 ### 🎮 Guide d'Utilisation
-### Menu Principal
+### Démarrage de l'application et Création d'un wallet :
 ![logo](images/1.png)
+### Créditer le wallet :
 ![logo](images/2.png)
+### Consultation des informations du wallet :
 ![logo](images/3.png)
+### Comparaison des frais :
 ![logo](images/4.png)
+### Consultation du mempool :
 ![logo](images/5.png)
+### Création d'une transaction :
 ![logo](images/6.png)
 ![logo](images/7.png)
+### Vérification de la position dans le mempool :
 ![logo](images/8.png)
+### Nouvelle consultation du mempool (avec votre transaction) :
 ![logo](images/9.png)
+### Informations du wallet après transaction :
 ![logo](images/10.png)
+### Séléctionné un wallet
 ![logo](images/11.png)
 
 
