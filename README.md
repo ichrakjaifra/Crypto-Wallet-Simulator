@@ -136,7 +136,8 @@ public class DatabaseConfig {
 
 ### 🎮 Guide d'Utilisation
 Menu Principal
-![logo](images/1png)
+![logo](images/1.png)
+
 
 ### 📝 Journalisation (Logging)
 Les logs sont sauvegardés dans logs/crypto-wallet.log :
