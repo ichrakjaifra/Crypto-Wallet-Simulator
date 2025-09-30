@@ -135,8 +135,18 @@ public class DatabaseConfig {
 ```
 
 ### 🎮 Guide d'Utilisation
-Menu Principal
+### Menu Principal
 ![logo](images/1.png)
+![logo](images/2.png)
+![logo](images/3.png)
+![logo](images/4.png)
+![logo](images/5.png)
+![logo](images/6.png)
+![logo](images/7.png)
+![logo](images/8.png)
+![logo](images/9.png)
+![logo](images/10.png)
+![logo](images/11.png)
 
 
 ### 📝 Journalisation (Logging)
