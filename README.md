@@ -99,7 +99,28 @@
 -- Créer la base de données
 CREATE DATABASE crypto_wallet;
 
--- Les tables seront créées automatiquement au premier lancement
+CREATE TABLE wallets (
+    id UUID PRIMARY KEY,
+    address VARCHAR(255) NOT NULL UNIQUE,
+    balance DOUBLE PRECISION NOT NULL DEFAULT 0.0,
+    crypto_type VARCHAR(20) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE transactions (
+    id UUID PRIMARY KEY,
+    source_address VARCHAR(255) NOT NULL,
+    destination_address VARCHAR(255) NOT NULL,
+    amount DOUBLE PRECISION NOT NULL,
+    fees DOUBLE PRECISION NOT NULL,
+    creation_date TIMESTAMP NOT NULL,
+    fee_level VARCHAR(20) NOT NULL,
+    status VARCHAR(20) NOT NULL,
+    crypto_type VARCHAR(20) NOT NULL,
+    wallet_id UUID REFERENCES wallets(id) ON DELETE CASCADE,
+    confirmed_at TIMESTAMP NULL
+);
+
 ```
 
 ### 3. Configuration
@@ -114,5 +135,45 @@ public class DatabaseConfig {
 ```
 
 ### 🎮 Guide d'Utilisation
+Menu Principal
+![logo](images/1png)
+
+### 📝 Journalisation (Logging)
+Les logs sont sauvegardés dans logs/crypto-wallet.log :
+
+```
+[2025-09-23 12:13:57] INFO: CryptoWalletSimulator - === Test de connexion à PostgreSQL ===
+[2025-09-23 12:21:35] INFO: CryptoWalletSimulator - === Test de connexion à PostgreSQL ===
+[2025-09-23 14:04:28] SEVERE: CryptoWalletSimulator - Erreur de connexion à la base de données: FATAL: authentification par mot de passe �chou�e pour l'utilisateur  � postgres �
+[2025-09-23 14:21:39] INFO: CryptoWalletSimulator - === Test de connexion à PostgreSQL ===
+[2025-09-23 14:21:40] INFO: CryptoWalletSimulator - Connexion à la base de données établie avec succès
+```
+
+### 🚀 Fonctionnalités Avancées
+### Validation des Adresses
+Bitcoin: Format 1, 3, ou bc1 avec 25-39 caractères
+
+Ethereum: Format 0x avec 40 caractères hexadécimaux
+
+### Gestion d'Erreurs
+Solde insuffisant
+
+Adresse invalide
+
+Montant négatif
+
+Connexion base de données
+
+### Génération Aléatoire
+Transactions simulées pour le mempool
+
+Adresses cryptographiques réalistes
+
+Variation des frais selon la congestion
+
+### 👥 Auteur
+Votre Nom
+🐙 GitHub: @https://github.com/ichrakjaifra
+
 
 
