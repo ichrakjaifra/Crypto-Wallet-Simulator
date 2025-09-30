@@ -39,3 +39,23 @@
 ## 📁 Structure du Projet
 ![Logo](images/s1.png)
 ![Logo](images/s22.png)
+
+
+## ⚙️ Prérequis et Installation
+
+### 1. Prérequis Système
+- **Java JDK 8**
+- **PostgreSQL 12+**
+- **Windows/Linux/Mac**
+
+### 2. Installation de la Base de Données
+
+```sql
+-- Créer la base de données
+CREATE DATABASE crypto_wallet;
+
+-- Les tables seront créées automatiquement au premier lancement
+
+### 3. Configuration
+
+Modifiez DatabaseConfig.java selon votre configuration PostgreSQL :
