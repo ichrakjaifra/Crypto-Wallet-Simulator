@@ -41,6 +41,7 @@
 ![Logo](images/s22.png)
 
 
+
 ## ⚙️ Prérequis et Installation
 
 ### 1. Prérequis Système
@@ -57,5 +58,6 @@ CREATE DATABASE crypto_wallet;
 -- Les tables seront créées automatiquement au premier lancement
 
 ### 3. Configuration
-
 Modifiez DatabaseConfig.java selon votre configuration PostgreSQL :
+
+
