@@ -109,3 +109,34 @@
 [2025-09-29 14:41:57] INFO: CryptoWalletSimulator - Wallet ins√©r√© avec succ√®s: bd36f933-94db-459d-a0a9-c31df2340749
 [2025-09-29 14:41:57] INFO: CryptoWalletSimulator - Nouveau wallet cr√©√©: bd36f933-94db-459d-a0a9-c31df2340749 - ETHEREUM
 [2025-09-29 14:42:08] INFO: CryptoWalletSimulator - Application ferm√©e
+[2025-09-30 10:08:22] INFO: CryptoWalletSimulator - Connexion √† la base de donn√©es √©tablie avec succ√®s
+[2025-09-30 10:08:22] INFO: CryptoWalletSimulator - Tables de la base de donn√©es initialis√©es avec succ√®s
+[2025-09-30 10:08:22] INFO: CryptoWalletSimulator - Base de donn√©es initialis√©e avec succ√®s
+[2025-09-30 10:08:46] INFO: CryptoWalletSimulator - Wallet ins√©r√© avec succ√®s: 8f2aa593-dc6e-4072-92ed-dfde0da92e1e
+[2025-09-30 10:08:46] INFO: CryptoWalletSimulator - Nouveau wallet cr√©√©: 8f2aa593-dc6e-4072-92ed-dfde0da92e1e - BITCOIN
+[2025-09-30 10:11:22] INFO: CryptoWalletSimulator - Wallet mis √† jour avec succ√®s: 8f2aa593-dc6e-4072-92ed-dfde0da92e1e
+[2025-09-30 10:11:22] INFO: CryptoWalletSimulator - Wallet cr√©dit√©: 8f2aa593-dc6e-4072-92ed-dfde0da92e1e - Montant: 10,000000 BTC - Nouveau solde: 10,000000 BTC
+[2025-09-30 10:13:17] INFO: CryptoWalletSimulator - 20 transactions al√©atoires g√©n√©r√©es dans le mempool
+[2025-09-30 10:13:17] INFO: CryptoWalletSimulator - Mempool vid√©
+[2025-09-30 10:14:07] INFO: CryptoWalletSimulator - 20 transactions al√©atoires g√©n√©r√©es dans le mempool
+[2025-09-30 10:14:07] INFO: CryptoWalletSimulator - Mempool vid√©
+[2025-09-30 10:14:31] INFO: CryptoWalletSimulator - 15 transactions al√©atoires g√©n√©r√©es dans le mempool
+[2025-09-30 10:16:12] INFO: CryptoWalletSimulator - Transaction ins√©r√©e avec succ√®s: b90643ba-b608-4649-af7c-0bea725c8c8a
+[2025-09-30 10:16:12] INFO: CryptoWalletSimulator - Transaction ajout√©e au mempool: b90643ba-b608-4649-af7c-0bea725c8c8a
+[2025-09-30 10:16:13] INFO: CryptoWalletSimulator - Wallet mis √† jour avec succ√®s: 8f2aa593-dc6e-4072-92ed-dfde0da92e1e
+[2025-09-30 10:16:13] INFO: CryptoWalletSimulator - Solde du wallet mis √† jour: 8f2aa593-dc6e-4072-92ed-dfde0da92e1e - Nouveau solde: 9.899773
+[2025-09-30 10:16:13] INFO: CryptoWalletSimulator - Transaction cr√©√©e: b90643ba-b608-4649-af7c-0bea725c8c8a - Wallet: 8f2aa593-dc6e-4072-92ed-dfde0da92e1e - Montant: 0,100000 - Frais: 0,000227 - Nouveau solde: 9,899773
+[2025-09-30 10:17:32] INFO: CryptoWalletSimulator - 15 transactions al√©atoires g√©n√©r√©es dans le mempool
+[2025-09-30 10:19:13] INFO: CryptoWalletSimulator - Application ferm√©e
+[2025-09-30 11:57:44] INFO: CryptoWalletSimulator - Connexion ‡ la base de donnÈes Ètablie avec succËs
+[2025-09-30 11:57:44] INFO: CryptoWalletSimulator - Tables de la base de donnÈes initialisÈes avec succËs
+[2025-09-30 11:57:44] INFO: CryptoWalletSimulator - Base de donnÈes initialisÈe avec succËs
+[2025-09-30 11:58:31] INFO: CryptoWalletSimulator - Wallet insÈrÈ avec succËs: fbaa9a8e-fa88-4fe2-aaeb-69b28c7a6690
+[2025-09-30 11:58:31] INFO: CryptoWalletSimulator - Nouveau wallet crÈÈ: fbaa9a8e-fa88-4fe2-aaeb-69b28c7a6690 - BITCOIN
+[2025-09-30 11:58:43] INFO: CryptoWalletSimulator - Wallet insÈrÈ avec succËs: 4a934284-c3c0-4abe-ae44-e941a75ec0c5
+[2025-09-30 11:58:43] INFO: CryptoWalletSimulator - Nouveau wallet crÈÈ: 4a934284-c3c0-4abe-ae44-e941a75ec0c5 - BITCOIN
+[2025-09-30 12:00:03] INFO: CryptoWalletSimulator - Application fermÈe
+[2025-09-30 12:06:39] INFO: CryptoWalletSimulator - Connexion ‡ la base de donnÈes Ètablie avec succËs
+[2025-09-30 12:06:39] INFO: CryptoWalletSimulator - Tables de la base de donnÈes initialisÈes avec succËs
+[2025-09-30 12:06:39] INFO: CryptoWalletSimulator - Base de donnÈes initialisÈe avec succËs
+[2025-09-30 12:06:42] INFO: CryptoWalletSimulator - Application fermÈe
