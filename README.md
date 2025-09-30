@@ -56,8 +56,16 @@
 CREATE DATABASE crypto_wallet;
 
 -- Les tables seront créées automatiquement au premier lancement
+```
 
 ### 3. Configuration
 Modifiez DatabaseConfig.java selon votre configuration PostgreSQL :
+
+```public class DatabaseConfig {
+    public static final String URL = "jdbc:postgresql://localhost:5432/crypto_wallet";
+    public static final String USERNAME = "postgres";
+    public static final String PASSWORD = "votre_mot_de_passe";
+}
+```
 
 
