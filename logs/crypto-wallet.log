@@ -140,3 +140,9 @@
 [2025-09-30 12:06:39] INFO: CryptoWalletSimulator - Tables de la base de données initialisées avec succès
 [2025-09-30 12:06:39] INFO: CryptoWalletSimulator - Base de données initialisée avec succès
 [2025-09-30 12:06:42] INFO: CryptoWalletSimulator - Application fermée
+[2025-10-06 11:39:26] INFO: CryptoWalletSimulator - Connexion à la base de données établie avec succès
+[2025-10-06 11:39:26] INFO: CryptoWalletSimulator - Tables de la base de données initialisées avec succès
+[2025-10-06 11:39:26] INFO: CryptoWalletSimulator - Base de données initialisée avec succès
+[2025-10-06 11:39:40] INFO: CryptoWalletSimulator - Wallet inséré avec succès: 2b8f1b4d-be71-4062-b0ab-cb4dffeb74f0
+[2025-10-06 11:39:40] INFO: CryptoWalletSimulator - Nouveau wallet créé: 2b8f1b4d-be71-4062-b0ab-cb4dffeb74f0 - BITCOIN
+[2025-10-06 11:39:51] INFO: CryptoWalletSimulator - Application fermée

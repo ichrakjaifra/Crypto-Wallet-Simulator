@@ -43,6 +43,7 @@ public class WalletRepository implements IWallet {
         return Optional.empty();
     }
 
+
     @Override
     public List<Wallet> findAll() {
         List<Wallet> wallets = new ArrayList<>();

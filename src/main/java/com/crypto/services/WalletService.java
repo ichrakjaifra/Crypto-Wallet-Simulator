@@ -15,7 +15,7 @@ public class WalletService {
     private static WalletService instance;
     private WalletRepository walletRepository;
 
-    // ⚠️ CONSTRUCTEUR SIMPLE SANS DÉPENDANCE
+    // CONSTRUCTEUR SIMPLE SANS DÉPENDANCE
     private WalletService() {
         this.walletRepository = WalletRepository.getInstance();
     }
